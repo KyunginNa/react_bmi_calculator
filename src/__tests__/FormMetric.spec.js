@@ -1,13 +1,13 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import Form from "../components/Form";
+import FormMetric from "../components/FormMetric";
 
-describe("Form", () => {
+describe("FormMetric", () => {
   const handleChange = jest.fn();
   const handleSubmit = jest.fn();
   const wrapper = shallow(
-    <Form
+    <FormMetric
       weight="90"
       height="190"
       onChangeHandler={handleChange}

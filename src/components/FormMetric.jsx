@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = props => {
+const FormMetric = props => {
     return (
         <form onSubmit={props.onSubmitHandler}>
             <label htmlFor="weight">Weight</label>
@@ -27,4 +27,4 @@ const Form = props => {
     )
 }
 
-export default Form
+export default FormMetric
