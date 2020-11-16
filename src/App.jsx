@@ -3,6 +3,7 @@ import FormMetric from './components/FormMetric'
 import FormImperial from './components/FormImperial'
 import Message from './components/Message'
 import { calculateMetricBmi } from './helpers/bmiMetricHelper'
+import { calculateImperialBmi } from './helpers/bmiImperialHelper'
 
 class App extends Component {
   state = {
@@ -17,32 +18,39 @@ class App extends Component {
   onChangeHandler = e => this.setState({ [e.target.name]: e.target.value })
   onSubmitHandler = e => {
     e.preventDefault()
-    const [bmiValue, bmiMessage] = calculateMetricBmi(
-      this.state.weight,
-      this.state.height
-    )
-    this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage })
+    if (this.state.method === "metric") {
+      const [bmiValue, bmiMessage] = calculateMetricBmi(
+        this.state.weight,
+        this.state.height)
+      this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage })
+    }
+    else {
+      const [bmiValue, bmiMessage] = calculateImperialBmi(
+        this.state.weight,
+        this.state.height)
+      this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage })
+    }
   }
 
   render() {
     const method = this.state.method
     let form;
-    if ( method === "metric") {
+    if (method === "metric") {
       form =
         <FormMetric
-        weight={this.state.weight}
-        height={this.state.height}
-        onChangeHandler={this.onChangeHandler}
-        onSubmitHandler={this.onSubmitHandler}
-      />
+          weight={this.state.weight}
+          height={this.state.height}
+          onChangeHandler={this.onChangeHandler}
+          onSubmitHandler={this.onSubmitHandler}
+        />
     } else {
       form =
         <FormImperial
-        weight={this.state.weight}
-        height={this.state.height}
-        onChangeHandler={this.onChangeHandler}
-        onSubmitHandler={this.onSubmitHandler}
-      />
+          weight={this.state.weight}
+          height={this.state.height}
+          onChangeHandler={this.onChangeHandler}
+          onSubmitHandler={this.onSubmitHandler}
+        />
     }
     return (
       <div>
