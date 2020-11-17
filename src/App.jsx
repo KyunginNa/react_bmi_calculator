@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import FormMetric from './components/FormMetric'
 import FormImperial from './components/FormImperial'
+import SelectMethod from './components/SelectMethod'
 import Message from './components/Message'
 import { calculateMetricBmi } from './helpers/bmiMetricHelper'
 import { calculateImperialBmi } from './helpers/bmiImperialHelper'
+import { Image } from 'semantic-ui-react'
+
 
 class App extends Component {
   state = {
@@ -53,11 +56,13 @@ class App extends Component {
         />
     }
     return (
-      <div>
-        <select id="select-method" value={this.state.method} onChange={this.onSelectHandler}>
-          <option value="metric">Metric</option>
-          <option value="imperial">Imperial</option>
-        </select>
+      <div id="app-div">
+         <Image src="/images/scale.png" size="small" centered></Image>
+          <h2>BMI Calculator</h2>
+        <SelectMethod
+          value={this.state.method}
+          onChange={this.onSelectHandler}
+        />
         {form}
         {this.state.bmiValue && (
           <Message

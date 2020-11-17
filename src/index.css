@@ -1,13 +1,84 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: monospace;
+  font-size: large;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h2 {
+  font-family: monospace;
+  color: darkorange;
+}
+
+#app-div {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+#select-method-div {
+  margin-bottom: 1em;
+}
+
+#select-method {
+  margin-left: 0.5em;
+  font-family: monospace;
+}
+
+#form-imperial-height-label {
+  margin-top: 0.5em;
+}
+
+#imperial-weight {
+  font-family: monospace;
+  width: 150px;
+}
+
+#imperial-height {
+  margin-top: 0.5em;
+  font-family: monospace;
+  width: 150px;
+}
+
+#form-height-label {
+  margin-top: 0.5em;
+}
+
+#height {
+  margin-top: 0.5em;
+  font-family: monospace;
+  width: 150px;
+}
+
+#weight {
+  font-family: monospace;
+  width: 150px;
+}
+
+#imperial-calculate {
+  margin-top: 1em;
+  font-family: monospace;
+}
+
+#calculate {
+  margin-top: 1em;
+  font-family: monospace;
+}
+
+#bmi-message {
+  margin-top: 1em;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: large;
 }

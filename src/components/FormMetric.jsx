@@ -1,9 +1,10 @@
 import React from 'react'
+import { Button, Icon } from 'semantic-ui-react'
 
 const FormMetric = props => {
     return (
         <form onSubmit={props.onSubmitHandler}>
-            <label htmlFor="weight">Weight</label>
+            <label htmlFor="weight">Weight: </label>
             <input
                 type="number"
                 required
@@ -12,8 +13,8 @@ const FormMetric = props => {
                 name="weight"
                 id="weight"
                 onChange={props.onChangeHandler}
-                />
-            <label htmlFor="height">Height</label>
+            /><br />
+            <label htmlFor="height" id="form-height-label">Height: </label>
             <input
                 type="number"
                 required
@@ -21,8 +22,13 @@ const FormMetric = props => {
                 value={props.height}
                 name="height"
                 id="height"
-                onChange={ props.onChangeHandler}/>
-            <button id="calculate">Calculate BMI</button>
+                onChange={props.onChangeHandler} /><br />
+            <Button id="calculate" animated color="orange">
+                <Button.Content visible>Calculate BMI</Button.Content>
+                <Button.Content hidden>
+                    <Icon name='calculator' />
+                </Button.Content>
+            </Button>
         </form>
     )
 }
